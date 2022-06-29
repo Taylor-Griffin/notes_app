@@ -4,15 +4,17 @@ import Note from './components/Note';
 const App = (props) => {
   const [notes, setNotes] = useState(props.notes);
   const [newNote, setNewNote] = useState('a new note...');
+  console.log(notes);
+
   const addNote = (event) => {
     event.preventDefault();
     setNotes([
       ...notes,
       {
-        id: notes.length + 2,
+        id: notes.length + 1,
         content: newNote,
-        date: Date.now(),
-        important: true,
+        date: new Date().toISOString(),
+        important: Math.random() < 0.5,
       },
     ]);
   };
