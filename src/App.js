@@ -17,6 +17,7 @@ const App = (props) => {
         important: Math.random() < 0.5,
       },
     ]);
+    setNewNote('');
   };
   return (
     <div>
