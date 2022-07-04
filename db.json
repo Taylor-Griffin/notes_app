@@ -19,16 +19,10 @@
       "important": true
     },
     {
-      "content": "bob",
-      "date": "2022-07-04T04:08:10.263Z",
+      "content": "new note here",
+      "date": "2022-07-04T04:51:15.606Z",
       "important": false,
       "id": 4
-    },
-    {
-      "content": "bobs birthers",
-      "date": "2022-07-04T04:13:18.027Z",
-      "important": false,
-      "id": 5
     }
   ]
 }
