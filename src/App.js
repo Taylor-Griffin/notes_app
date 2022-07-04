@@ -18,16 +18,17 @@ const App = () => {
 
   const addNote = (event) => {
     event.preventDefault();
-    setNotes([
-      ...notes,
-      {
-        id: notes.length + 1,
-        content: newNote,
-        date: new Date().toISOString(),
-        important: Math.random() < 0.5,
-      },
-    ]);
-    setNewNote('');
+
+    const noteObject = {
+      content: newNote,
+      date: new Date().toISOString(),
+      important: Math.random() < 0.5,
+    };
+
+    axios.post('http://localhost:3001/notes', noteObject).then((res) => {
+      setNotes(notes.concat(res.data));
+      setNewNote('');
+    });
   };
 
   const notesToShow = showAll ? notes : notes.filter((note) => note.important);
@@ -50,6 +51,7 @@ const App = () => {
           onChange={(e) => setNewNote(e.target.value)}
           onFocus={() => setNewNote('')}
         />
+
         <button type="submit">save</button>
       </form>
     </div>
