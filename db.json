@@ -21,13 +21,13 @@
     {
       "content": "bob",
       "date": "2022-07-04T04:08:10.263Z",
-      "important": true,
+      "important": false,
       "id": 4
     },
     {
       "content": "bobs birthers",
       "date": "2022-07-04T04:13:18.027Z",
-      "important": true,
+      "important": false,
       "id": 5
     }
   ]
