@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Note = ({ note, toggleImportance }) => {
   return (
-    <li>
+    <li className="note">
       {note.content}
       <button onClick={toggleImportance}>Important</button>
     </li>
