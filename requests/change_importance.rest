@@ -1,0 +1,10 @@
+PUT http://localhost:3001/api/notes/1
+Content-Type: application/json
+
+{
+     "id": 134555,
+      "content": "HTML is cheasy",
+      "date": "2022-1-17T17:30:31.098Z",
+      "important": true
+
+}
