@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 import Note from './components/Note';
 import Notification from './components/Notification';
+import Footer from './components/Footer';
 import noteService from './services/notes';
 import loginService from './services/login';
 
@@ -20,15 +21,6 @@ const App = () => {
     });
   }, []);
 
-  useEffect(() => {
-    const loggedUserJSON = window.localStorage.getItem('loggedNoteappUser');
-    if (loggedUserJSON) {
-      const user = JSON.parse(loggedUserJSON);
-      setUser(user);
-      noteService.setToken(user.token);
-    }
-  }, []);
-
   const handleLogin = async (event) => {
     event.preventDefault();
     try {
@@ -36,9 +28,8 @@ const App = () => {
         username,
         password,
       });
-      setUser(user);
       noteService.setToken(user.token);
-      window.localStorage.setItem('loggedNoteappUser', JSON.stringify(user));
+      setUser(user);
       setUsername('');
       setPassword('');
     } catch (exception) {
@@ -149,6 +140,8 @@ const App = () => {
           />
         ))}
       </ul>
+
+      <Footer />
     </div>
   );
 };
